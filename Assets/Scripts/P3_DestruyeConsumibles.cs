@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class P3_DestruyeConsumibles : MonoBehaviour
 {
+    [SerializeField] P3_HandlerGame handler;
     private void OnCollisionEnter(Collision other){
         GameObject objeto = other.gameObject;
-        if(!objeto.CompareTag("Escenario")){
+        if(objeto.CompareTag("Consumible")){
             Destroy(objeto);
+            handler.agregarPuntuacion(100);
         }
     }
 }

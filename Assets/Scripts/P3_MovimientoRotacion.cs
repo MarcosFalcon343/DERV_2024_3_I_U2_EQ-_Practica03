@@ -9,22 +9,24 @@ public class P3_MovimientoRotacion : MonoBehaviour
     void Update()
     {
         if(Input.GetKey(KeyCode.W)){
+            transform.rotation = Quaternion.Euler(0, 0, 0); // Rotar en el eje Y a 0 grados
             transform.position += velocidad_movimiento * Time.deltaTime * transform.forward;
         }else if(Input.GetKey(KeyCode.S)){
-            transform.position += velocidad_movimiento *  -1 *Time.deltaTime * transform.forward;
-        }
-
-        if(Input.GetKey(KeyCode.A)){
-            transform.position += velocidad_movimiento *  -1 *Time.deltaTime * transform.right;
+            transform.rotation = Quaternion.Euler(0, 180, 0); // Rotar en el eje Y a 0 grados
+            transform.position += velocidad_movimiento * Time.deltaTime * transform.forward;
+        }else if(Input.GetKey(KeyCode.A)){
+            transform.rotation = Quaternion.Euler(0, -90, 0); // Rotar en el eje Y a 0 grados
+            transform.position += velocidad_movimiento * Time.deltaTime * transform.forward;
         }else if(Input.GetKey(KeyCode.D)){
-            transform.position += velocidad_movimiento *Time.deltaTime * transform.right;
+            transform.rotation = Quaternion.Euler(0, 90, 0); // Rotar en el eje Y a 0 grados
+            transform.position += velocidad_movimiento *Time.deltaTime * transform.forward;
         }
 
-        if(Input.GetKey(KeyCode.Q)){
-            transform.Rotate(0, velocidad_rotacion * Time.deltaTime,0);
-        }else if(Input.GetKey(KeyCode.E)){
-            transform.Rotate(0, -1 * velocidad_rotacion * Time.deltaTime,0);
-        }
+        //if(Input.GetKey(KeyCode.Q)){
+        //    transform.Rotate(0,-1 * velocidad_rotacion * Time.deltaTime,0);
+        //}else if(Input.GetKey(KeyCode.E)){
+        //    transform.Rotate(0,velocidad_rotacion * Time.deltaTime,0);
+        //}
     }
 }
 
