@@ -21,12 +21,6 @@ public class P3_MovimientoRotacion : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 90, 0); // Rotar en el eje Y a 0 grados
             transform.position += velocidad_movimiento *Time.deltaTime * transform.forward;
         }
-
-        //if(Input.GetKey(KeyCode.Q)){
-        //    transform.Rotate(0,-1 * velocidad_rotacion * Time.deltaTime,0);
-        //}else if(Input.GetKey(KeyCode.E)){
-        //    transform.Rotate(0,velocidad_rotacion * Time.deltaTime,0);
-        //}
     }
 }
 

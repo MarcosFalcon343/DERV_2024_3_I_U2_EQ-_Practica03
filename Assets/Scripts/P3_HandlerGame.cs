@@ -36,7 +36,6 @@ public class P3_HandlerGame : MonoBehaviour
         PlayerPrefs.SetString("Label", label);
     }
 
-        
     public void cambioPuntacion(int puntuacion){
         PlayerPrefs.SetInt("Puntuacion",puntuacion);
     }
@@ -44,7 +43,7 @@ public class P3_HandlerGame : MonoBehaviour
 
     public void agregarPuntuacion(int puntuacion){
         this.puntuacion += puntuacion;
-        if(this.puntuacion >= 8700){
+        if(this.puntuacion >= 8400){
             this.cambioLabel("Lo haz conseguido, tu puntuacion fue");
             this.cambioPuntacion(this.puntuacion);
             this.cambioEscena(2);

@@ -7,20 +7,19 @@ public class P3_Tiempo : MonoBehaviour
 {
 
     [SerializeField]  P3_HandlerGame handler;
-    int cont;
+    [SerializeField]int TiempoContador;
     [SerializeField] TextMeshProUGUI texto_tiempo;
     void Start()
     {
-        cont = 60;
         StartCoroutine(currutina_contador());
     }
 
     IEnumerator currutina_contador(){
-        while(cont > 0){
-            cont--;
-            texto_tiempo.text = cont.ToString();
+        while(TiempoContador > 0){
+            TiempoContador--;
+            texto_tiempo.text = TiempoContador.ToString();
             yield return new WaitForSeconds(1f); 
         }
-        this.handler.cambioEscenaFinalizado();
+        handler.cambioEscenaFinalizado();
     }
 }
